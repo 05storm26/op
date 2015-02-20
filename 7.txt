@@ -1,0 +1,1 @@
+(cat -n a.txt | tail -n +100 | head -n 100) > a.2.txt

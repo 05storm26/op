@@ -1,0 +1,1 @@
+( cat a.txt | grep -Pv "^\s*$" ) > a.2.txt
