@@ -1,0 +1,2 @@
+ls -lhA | grep -E "^d" && ls -lhA | grep -E "^-"
+

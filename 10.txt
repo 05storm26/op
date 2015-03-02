@@ -1,0 +1,2 @@
+akt=$(pwd) && konyvtar=bup &&  cd $konyvtar && (ls -lhA | grep -E "^d........x") && cd $akt
+

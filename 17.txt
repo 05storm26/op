@@ -1,0 +1,2 @@
+ls -l | tr '[A-Za-z]' '[F-ZA-Ef-za-e]'
+

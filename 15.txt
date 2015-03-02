@@ -1,0 +1,2 @@
+ls -lha $HOME | grep -E "^-" | sort | head -n 9 | tail -n $((9-3+1))
+

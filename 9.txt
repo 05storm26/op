@@ -1,0 +1,2 @@
+ls -lha | grep -E "^-..x..x..x" | sed "s/\s\+/\t/g" | cut -f9- 
+

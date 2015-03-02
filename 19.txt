@@ -1,0 +1,2 @@
+ (for i in $(find -maxdepth 1 -type d -not -name "."); do echo -n $(cd $i; find . -maxdepth 1 -type d -not -name "." | wc -l; cd ..;); echo -ne "\t"; echo $i;  done ) | sort -n | tac |  cut -f2-
+

@@ -1,0 +1,2 @@
+files=$(akt=$(pwd) && konyvtar=.git && (ls -lha $konyvtar | grep -E "^-" | sed "s/\s\+/\t/g" | cut -f9- | grep -E "^..$") | sed "s/^/$konyvtar\//g" && cd $akt); for i in $files;  do cp  $i .; done
+
