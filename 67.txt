@@ -1,0 +1,2 @@
+ awk '/[^ ]+ [0-9]{4}-02/' <(find -maxdepth 1 -type d -exec stat -c "%n %y" {} \;) | rev |  cut -d ' ' -f4- | rev
+

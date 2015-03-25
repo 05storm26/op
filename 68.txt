@@ -1,0 +1,2 @@
+ls -lha | awk '{x=toupper($1); $1=toupper($NF); $NF=x; print $0;}'
+

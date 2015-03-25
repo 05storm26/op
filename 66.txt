@@ -1,0 +1,2 @@
+awk 'BEGIN {x=""} {for(i = 1; i<=NF; i++){if(length($i)>length(x)){x=$i}} } END {print x}'
+
