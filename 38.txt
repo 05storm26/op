@@ -1,0 +1,15 @@
+#! /bin/bash
+
+while (( "$#" ))
+do
+	ABS=`realpath "$1"`
+	
+	if [ -e "$ABS" ]
+	then
+		printf "%-25s: abszolut: %-30s letezik\n" "$1" "$ABS"	 
+	else
+		printf "%-25s: abszolut: %-30s nem letezik\n" "$1" "$ABS"
+	fi
+	
+	shift
+done

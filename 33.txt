@@ -1,0 +1,10 @@
+#!/bin/bash
+
+i=1
+
+while (( "$#" )); 
+do 
+	printf "%i %s\n" $i "$1"
+	shift
+	((i=i+1))
+done

@@ -1,0 +1,13 @@
+#! /bin/bash
+
+(head "$1" -n 1 && tail -n+2 "$2") > "$2.tmp"
+(head "$2" -n 1 && tail -n+2 "$1") > "$1.tmp"
+
+rm "$1"
+rm "$2"
+
+mv "$1.tmp" "$1"
+mv "$2.tmp" "$2"
+
+
+

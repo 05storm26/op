@@ -1,0 +1,45 @@
+#!/bin/bash
+
+f=$(find "$1/." -maxdepth 1  -type f | grep -E "\.pid")
+invf=""
+
+for i in $f
+do
+	read p < "$i";
+	res=$(ps -p $p -o comm=)
+	if [ "${#res}" -eq 0 ]
+	then
+		invf="$invf\n$i"
+	fi 	
+done
+
+delete=0
+
+while (( "$#" ))
+do
+	echo $1
+	
+	case "$1" in
+		--)
+		shift
+		break
+		;;
+		-d)
+		delete=1
+		shift
+		;;
+	esac
+	shift
+done
+
+
+
+for i in $invf
+do
+	echo -e  "$i"
+	
+	if [ "$delete" -eq 1 ] 
+	then
+		rm $(echo -e "$i" | tr -d "\n" ) 
+	fi
+done

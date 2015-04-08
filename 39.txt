@@ -1,0 +1,24 @@
+#! /bin/bash
+
+if [ "$#" -gt 1  ]
+then
+	if [ -f "$2" ]
+	then
+		rm "$2"
+	fi
+fi
+
+cd "$1"
+l=$(find -type l)
+
+for i in $l
+do
+	if [ ! -e "$i" ]
+	then
+		rm "$i"
+		if [ "$#" -gt 1 ] 
+		then
+			echo "$i" >> "$2"			
+		fi
+	fi
+done

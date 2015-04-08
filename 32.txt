@@ -1,0 +1,6 @@
+#! /bin/bash
+
+
+printf "%i parametert kaptam\n" $#
+printf "az elso parameter: %s\n" $1
+printf "a program neve: %s\n" $0 

@@ -1,0 +1,9 @@
+#! /bin/bash
+
+if [ ! $# -eq 1 ] 
+then
+	echo "Pontosan egy parametert meg kell adnia!"
+	exit 1	
+fi
+
+printf "%i parametert adtak meg.\n" $#

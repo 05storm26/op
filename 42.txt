@@ -1,0 +1,17 @@
+#! /bin/bash
+
+if [ ! "$#" -gt 0 ]
+then
+	echo "minimum 1 parametert meg kell adnia"
+	exit 1
+fi
+
+if [ ! -d $1 ]
+then
+	echo "A megadott konyvtar: '$1' nem letezik"
+	exit 3
+fi
+
+printf "%i db fajl van\n" $(find "$1" -type f   |  wc -l)
+paste -s -d+ <(find "$1" -type f -print0  | xargs -0  du -s | cut  -f1 )|bc
+

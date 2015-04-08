@@ -1,0 +1,49 @@
+#! /bin/bash
+
+d=""
+f=""
+o=""
+
+while (( "$#" )); 
+do
+	if [ -d $1 ]
+	then
+		d="$d:$1"
+	elif [ -f $1 ]
+	then
+		f="$f:$1"
+	else
+		o="$o:$1"
+		
+	fi
+	shift
+		
+done
+
+IFS=':'
+
+ad=$d
+af=$f
+ao=$o
+
+echo -n "Konyvtarak:"
+
+for i in $ad
+do
+	echo $i
+done
+
+echo -n -e "\n===========\n\nFajlok:"
+
+for i in $af
+do
+        echo $i
+done
+
+echo -n -e "\n===========\n\nEgyebek:"
+
+for i in $ao
+do
+        echo $i
+done
+                
